@@ -5,6 +5,9 @@ import time
 import random
 import pygame
 import os
+from alarm_music import Music
+
+
 """
 : About - https://pl.wikipedia.org/wiki/Technika_Pomodoro
 
@@ -31,15 +34,16 @@ def countdown():
 
 pygame.mixer.pre_init(44100, 16, 2, 4096)
 pygame.mixer.init()
-def play():
-    filepath = os.path.abspath(__file__)
-    filedir = os.path.dirname(filepath) + "\\audio"
-    musicpath = os.path.join(filedir, "Kwon.mp3")
-    pygame.mixer.music.load(musicpath)
-    pygame.mixer.music.play(loops=0)
 
-def stop():
-    pygame.mixer.music.stop()
+# def play():
+#     filepath = os.path.abspath(__file__)
+#     filedir = os.path.dirname(filepath) + "\\audio"
+#     musicpath = os.path.join(filedir, "kwon.mp3")
+#     pygame.mixer.music.load(musicpath)
+#     pygame.mixer.music.play(loops=0)
+#
+# def stop():
+#     pygame.mixer.music.stop()
 
 
 root = Tk()
@@ -59,8 +63,6 @@ b1.grid(row=4, column=2, padx=20)
 
 b2 = Button(root, text='Start', width=20, command=countdown)
 b2.grid(row=6, column=2, padx=20)
-
-
 
 
 root.mainloop()
